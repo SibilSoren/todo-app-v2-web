@@ -39,7 +39,7 @@ const SignUp = () => {
       fullName: fullName,
     };
     axios
-      .post(`${URL.baseURL}createUser`, jsonToSend, { withCredentials: false })
+      .post(`${URL.baseURL}createUser/`, { ...jsonToSend })
       .then((response) => {
         if (response.data.status === "-1") {
           new Snackbar("Error while creating user.", {
